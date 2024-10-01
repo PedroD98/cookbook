@@ -1,0 +1,26 @@
+<h2>Registro de tipo de receita</h2>
+
+<% if flash[:notice] %>
+
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+
+<% end %>
+
+<%= form_with model: @recipe_type do | f | %>
+
+  <div> 
+    <%= f.label 'Tipo de receita:'%>
+    <%= f.text_field :name %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.submit "Registrar novo tipo" %>
+  </div>
+
+<% end %>
+
+<p><%= link_to "Livro de receitas", root_path%></p> 

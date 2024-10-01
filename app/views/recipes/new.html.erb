@@ -1,0 +1,13 @@
+<h2>Registro de receita</h2>
+
+<% if flash[:notice] %>
+
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+
+<% end %>
+
+<%= render partial: 'form', locals: { recipe: @recipe} %>
+
+<p><%= link_to "Livro de receitas", root_path%></p> 

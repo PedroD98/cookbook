@@ -1,0 +1,16 @@
+<h1>Livro de Receitas</h1>
+
+<div>
+  <h4><%= link_to 'Registrar nova receita', new_recipe_path %></h4>
+  <h4><%= link_to 'Registrar novo tipo de receita', new_recipe_type_path %></h4>
+  <h4><%= link_to 'Registrar nova culinária', new_cuisine_path %></h4>
+</div>
+
+<p><strong>Receitas Cadastradas:</strong></p>
+
+<dl>
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe.name, recipe %>
+    <br>
+  <% end %>
+</dl>

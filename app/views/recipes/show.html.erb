@@ -1,0 +1,53 @@
+<h1>Receita: <%= @recipe.name %></h1>
+
+<%= link_to "Editar receita", edit_recipe_path %>
+
+<% if flash[:notice] %>
+
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+
+<% end %>
+
+<dl>
+
+    <dt>
+      <strong>Nome:</strong><%= @recipe.name %>
+    </dt>
+
+    <dd>
+      <strong>Tipo da receita:</strong> <%= @recipe.recipe_type.name %>
+    </dd>
+
+    <dd>
+      <strong>Culinária:</strong> <%= @recipe.cuisine.name %>
+    </dd>
+
+    <dd>
+      <strong>Ingredientes:</strong> <%= @recipe.ingredients %>
+    </dd>
+
+    <dd>
+      <strong>Método de preparo:</strong> <%= @recipe.cook_method %>
+    </dd>
+
+    <dd>
+      <strong>Tempo de preparo:</strong> <%= @recipe.cook_time %>
+    </dd>
+
+    <dd>
+      <strong>Status:</strong> <%= @recipe.status %>
+    </dd>
+
+</dl>
+
+<div>
+  <%= button_to 'Publicar', publish_recipe_path, { method: 'patch'} %>
+
+  <br>
+
+  <%= button_to 'Remover publicação', withdraw_publication_recipe_path, { method: 'patch'} %>
+</div>
+
+<p><%= link_to "Livro de receitas", root_path%></p> 

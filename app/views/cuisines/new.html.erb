@@ -1,0 +1,26 @@
+<h2>Registro de culinária</h2>
+
+<% if flash[:notice] %>
+
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+
+<% end %>
+
+<%= form_with model: @cuisine do | f | %>
+
+  <div> 
+    <%= f.label 'Tipo de culinária:'%>
+    <%= f.text_field :name %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= f.submit "Registrar nova culinária" %>
+  </div>
+
+<% end %>
+
+<p><%= link_to "Livro de receitas", root_path%></p> 
